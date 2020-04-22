@@ -8,13 +8,11 @@
 
 import UIKit
 
-  class CollectionViewCell: UICollectionViewCell {
-      @IBOutlet weak var Label: UILabel!
-      @IBOutlet weak var button: UIButton!
-
-      var callback : (() -> Void)?
-
-      @IBAction func buttonPressed(_ sender: UIButton) {
-          callback?()
-      }
-  }
+   class CollectionViewCell: UICollectionViewCell {
+  @IBOutlet weak var Label: UILabel!
+    @IBOutlet weak var Label2: UILabel!
+    @IBOutlet weak var button: UIButton!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+}

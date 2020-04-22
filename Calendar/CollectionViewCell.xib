@@ -16,31 +16,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="59" height="52"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnO-W9-Dew">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obZ-SV-Uki">
+                        <rect key="frame" x="0.0" y="0.0" width="59" height="52"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfX-oi-7so">
+                        <rect key="frame" x="2" y="10" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.40008938309999997" green="0.3997647762" blue="0.41176661850000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnO-W9-Dew">
                         <rect key="frame" x="8.5" y="15.5" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obZ-SV-Uki">
-                        <rect key="frame" x="0.0" y="0.0" width="59" height="52"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <connections>
-                            <action selector="buttonPressed2:" destination="gTV-IL-0wX" eventType="touchCancel" id="YWP-Ms-WAo"/>
-                            <action selector="buttonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Nrx-F5-jGP"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
-            <constraints>
-                <constraint firstItem="hnO-W9-Dew" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="CKd-46-K5P"/>
-                <constraint firstItem="hnO-W9-Dew" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="HhT-q7-jZK"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="59" height="52"/>
             <connections>
                 <outlet property="Label" destination="hnO-W9-Dew" id="Ffg-EG-9CI"/>
-                <outlet property="button" destination="obZ-SV-Uki" id="GT8-5N-rtV"/>
+                <outlet property="Label2" destination="SfX-oi-7so" id="wrp-Ag-khI"/>
+                <outlet property="button" destination="obZ-SV-Uki" id="9Aw-XI-LD9"/>
             </connections>
             <point key="canvasLocation" x="144.20289855072465" y="143.97321428571428"/>
         </collectionViewCell>
