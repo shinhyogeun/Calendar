@@ -3,21 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		05AB637E63E2B943BF34C552 /* Pods_Calendar_CalendarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97763DA65F0C221D8B0E8EA3 /* Pods_Calendar_CalendarUITests.framework */; };
+		1526F1EB24509AE300B7C73B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1526F1EA24509AE300B7C73B /* ViewController.swift */; };
+		1526F1EE24509E9100B7C73B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1526F1EC24509E9100B7C73B /* CollectionViewCell.swift */; };
+		1526F1EF24509E9100B7C73B /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1526F1ED24509E9100B7C73B /* CollectionViewCell.xib */; };
 		15C5EF7B244D876800B4C597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5EF7A244D876800B4C597 /* AppDelegate.swift */; };
 		15C5EF7D244D876800B4C597 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5EF7C244D876800B4C597 /* SceneDelegate.swift */; };
-		15C5EF7F244D876800B4C597 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5EF7E244D876800B4C597 /* ViewController.swift */; };
 		15C5EF82244D876800B4C597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C5EF80244D876800B4C597 /* Main.storyboard */; };
 		15C5EF84244D876900B4C597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C5EF83244D876900B4C597 /* Assets.xcassets */; };
 		15C5EF87244D876900B4C597 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C5EF85244D876900B4C597 /* LaunchScreen.storyboard */; };
 		15C5EF92244D876900B4C597 /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5EF91244D876900B4C597 /* CalendarTests.swift */; };
 		15C5EF9D244D876900B4C597 /* CalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5EF9C244D876900B4C597 /* CalendarUITests.swift */; };
-		15C5EFAC244DB7EC00B4C597 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5EFAA244DB7EC00B4C597 /* CollectionViewCell.swift */; };
-		15C5EFAD244DB7EC00B4C597 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C5EFAB244DB7EC00B4C597 /* CollectionViewCell.xib */; };
 		338D0433956D1CC5BA67CB22 /* Pods_CalendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FFB786DF55F3225CBBEADE /* Pods_CalendarTests.framework */; };
 		9CFD6C0A064EB476493A2591 /* Pods_Calendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3A7AF84D81BC01EE8172D4 /* Pods_Calendar.framework */; };
 /* End PBXBuildFile section */
@@ -40,10 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1526F1EA24509AE300B7C73B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1526F1EC24509E9100B7C73B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		1526F1ED24509E9100B7C73B /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		15C5EF77244D876800B4C597 /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C5EF7A244D876800B4C597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15C5EF7C244D876800B4C597 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		15C5EF7E244D876800B4C597 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		15C5EF81244D876800B4C597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15C5EF83244D876900B4C597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15C5EF86244D876900B4C597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,8 +56,6 @@
 		15C5EF98244D876900B4C597 /* CalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C5EF9C244D876900B4C597 /* CalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUITests.swift; sourceTree = "<group>"; };
 		15C5EF9E244D876900B4C597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15C5EFAA244DB7EC00B4C597 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		15C5EFAB244DB7EC00B4C597 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		1B3A7AF84D81BC01EE8172D4 /* Pods_Calendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCDCB35149190753CA2A088 /* Pods-CalendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarTests.release.xcconfig"; path = "Target Support Files/Pods-CalendarTests/Pods-CalendarTests.release.xcconfig"; sourceTree = "<group>"; };
 		644ECF0D7CC6DAEF3915649F /* Pods-Calendar-CalendarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar-CalendarUITests.debug.xcconfig"; path = "Target Support Files/Pods-Calendar-CalendarUITests/Pods-Calendar-CalendarUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,14 +121,14 @@
 			isa = PBXGroup;
 			children = (
 				15C5EF7A244D876800B4C597 /* AppDelegate.swift */,
+				1526F1EC24509E9100B7C73B /* CollectionViewCell.swift */,
+				1526F1ED24509E9100B7C73B /* CollectionViewCell.xib */,
 				15C5EF7C244D876800B4C597 /* SceneDelegate.swift */,
-				15C5EF7E244D876800B4C597 /* ViewController.swift */,
 				15C5EF80244D876800B4C597 /* Main.storyboard */,
 				15C5EF83244D876900B4C597 /* Assets.xcassets */,
+				1526F1EA24509AE300B7C73B /* ViewController.swift */,
 				15C5EF85244D876900B4C597 /* LaunchScreen.storyboard */,
 				15C5EF88244D876900B4C597 /* Info.plist */,
-				15C5EFAA244DB7EC00B4C597 /* CollectionViewCell.swift */,
-				15C5EFAB244DB7EC00B4C597 /* CollectionViewCell.xib */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -171,7 +171,6 @@
 				83D91E9B2AAC4C7BA7C363B2 /* Pods-CalendarTests.debug.xcconfig */,
 				4CCDCB35149190753CA2A088 /* Pods-CalendarTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -286,7 +285,7 @@
 			files = (
 				15C5EF87244D876900B4C597 /* LaunchScreen.storyboard in Resources */,
 				15C5EF84244D876900B4C597 /* Assets.xcassets in Resources */,
-				15C5EFAD244DB7EC00B4C597 /* CollectionViewCell.xib in Resources */,
+				1526F1EF24509E9100B7C73B /* CollectionViewCell.xib in Resources */,
 				15C5EF82244D876800B4C597 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,9 +414,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15C5EF7F244D876800B4C597 /* ViewController.swift in Sources */,
+				1526F1EB24509AE300B7C73B /* ViewController.swift in Sources */,
 				15C5EF7B244D876800B4C597 /* AppDelegate.swift in Sources */,
-				15C5EFAC244DB7EC00B4C597 /* CollectionViewCell.swift in Sources */,
+				1526F1EE24509E9100B7C73B /* CollectionViewCell.swift in Sources */,
 				15C5EF7D244D876800B4C597 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
