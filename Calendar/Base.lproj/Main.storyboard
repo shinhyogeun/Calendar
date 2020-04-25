@@ -102,9 +102,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="CE6-r0-WRD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WTH-OF-VtJ"/>
+                    <navigationItem key="navigationItem" id="WTH-OF-VtJ" customClass="MonthNavigationBar" customModule="Calendar"/>
                     <connections>
                         <outlet property="collectionView" destination="zmE-PR-i2t" id="yNH-25-j7U"/>
+                        <outlet property="nextMonthName" destination="D9T-Tj-85Q" id="owk-ae-wha"/>
+                        <outlet property="nowMonthName" destination="wq2-lx-mCt" id="nxc-ll-AbG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEC-jS-XDc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -119,6 +121,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PKT-QG-Sex">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <rect key="contentStretch" x="0.0" y="0.59999999999999998" width="1" height="0.0"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
