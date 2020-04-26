@@ -19,7 +19,6 @@
 		15C5EF92244D876900B4C597 /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5EF91244D876900B4C597 /* CalendarTests.swift */; };
 		15C5EF9D244D876900B4C597 /* CalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5EF9C244D876900B4C597 /* CalendarUITests.swift */; };
 		15E6BE4A24531510009DE6E6 /* CalendarBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6BE4924531510009DE6E6 /* CalendarBrain.swift */; };
-		15E6BE4C24533553009DE6E6 /* MonthNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6BE4B24533553009DE6E6 /* MonthNavigationBar.swift */; };
 		338D0433956D1CC5BA67CB22 /* Pods_CalendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FFB786DF55F3225CBBEADE /* Pods_CalendarTests.framework */; };
 		9CFD6C0A064EB476493A2591 /* Pods_Calendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3A7AF84D81BC01EE8172D4 /* Pods_Calendar.framework */; };
 /* End PBXBuildFile section */
@@ -59,7 +58,6 @@
 		15C5EF9C244D876900B4C597 /* CalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUITests.swift; sourceTree = "<group>"; };
 		15C5EF9E244D876900B4C597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15E6BE4924531510009DE6E6 /* CalendarBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBrain.swift; sourceTree = "<group>"; };
-		15E6BE4B24533553009DE6E6 /* MonthNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthNavigationBar.swift; sourceTree = "<group>"; };
 		1B3A7AF84D81BC01EE8172D4 /* Pods_Calendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCDCB35149190753CA2A088 /* Pods-CalendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarTests.release.xcconfig"; path = "Target Support Files/Pods-CalendarTests/Pods-CalendarTests.release.xcconfig"; sourceTree = "<group>"; };
 		644ECF0D7CC6DAEF3915649F /* Pods-Calendar-CalendarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar-CalendarUITests.debug.xcconfig"; path = "Target Support Files/Pods-Calendar-CalendarUITests/Pods-Calendar-CalendarUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 				15C5EF7A244D876800B4C597 /* AppDelegate.swift */,
 				1526F1EC24509E9100B7C73B /* CollectionViewCell.swift */,
 				1526F1ED24509E9100B7C73B /* CollectionViewCell.xib */,
-				15E6BE4B24533553009DE6E6 /* MonthNavigationBar.swift */,
 				15C5EF7C244D876800B4C597 /* SceneDelegate.swift */,
 				15C5EF80244D876800B4C597 /* Main.storyboard */,
 				15C5EF83244D876900B4C597 /* Assets.xcassets */,
@@ -422,7 +419,6 @@
 			files = (
 				1526F1EB24509AE300B7C73B /* ViewController.swift in Sources */,
 				15E6BE4A24531510009DE6E6 /* CalendarBrain.swift in Sources */,
-				15E6BE4C24533553009DE6E6 /* MonthNavigationBar.swift in Sources */,
 				15C5EF7B244D876800B4C597 /* AppDelegate.swift in Sources */,
 				1526F1EE24509E9100B7C73B /* CollectionViewCell.swift in Sources */,
 				15C5EF7D244D876800B4C597 /* SceneDelegate.swift in Sources */,

@@ -12,16 +12,24 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var nowMonthName: UILabel!
     @IBOutlet weak var nextMonthName: UILabel!
+    
     var selectedRow : Int?
     var monthData = Array(1...CalenderBrain.init().curruntMothLength())
+    let searchController = UISearchController(searchResultsController: nil)
+    var items = [UIBarButtonItem]()
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
+
     override func viewDidLoad() {
             super.viewDidLoad()
+            self.title = String(CalenderBrain.init().curruntYear)
+            self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
             nowMonthName.text = String(CalenderBrain.init().curruntMonthName())
             nextMonthName.text = String(CalenderBrain.init().nextMonthName())
             self.collectionView.dataSource = self
             self.collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier : "MyCell")
+            self.navigationItem.searchController = searchController
         }
     
     
