@@ -43,22 +43,31 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateF
     
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! CollectionViewCell
+            if indexPath.row <= 5 {
+                cell.isHidden = true
+            } else{
                 cell.button.tag = indexPath.item
-                cell.button.addTarget(self, action:#selector(buttonPressed(_:)) , for: .touchUpInside)
-                cell.Label.text = String(Array(monthData)[indexPath.row])
-    
-                if selectedRow == indexPath.item{
-                    cell.Label.textColor = .white
-                    cell.Label2.backgroundColor = .red
-                    cell.Label2.layer.cornerRadius = 0.5 * cell.Label2.bounds.size.width
-                    cell.Label2.clipsToBounds = true
-                }else{
-                    cell.Label.textColor = .black
-                    cell.Label2.backgroundColor = .white
-                    cell.Label2.layer.cornerRadius =  0
-                }
-                return cell
+                            cell.button.addTarget(self, action:#selector(buttonPressed(_:)) , for: .touchUpInside)
+                            cell.Label.text = String(Array(monthData)[indexPath.row])
+                
+                            if selectedRow == indexPath.item{
+                                cell.Label.textColor = .white
+                                cell.Label2.backgroundColor = .red
+                                cell.Label2.layer.cornerRadius = 0.5 * cell.Label2.bounds.size.width
+                                cell.Label2.clipsToBounds = true
+                            }else{
+                                cell.Label.textColor = .black
+                                cell.Label2.backgroundColor = .white
+                                cell.Label2.layer.cornerRadius =  0
+                            }
+        
+            }
+            return cell
         }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 110)
+    }
     
         @IBAction func buttonPressed(_ sender: UIButton) {
             if selectedRow == sender.tag{
