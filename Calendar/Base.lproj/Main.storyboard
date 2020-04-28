@@ -53,14 +53,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="j21-yA-QTb">
-                                        <rect key="frame" x="0.0" y="0.0" width="39" height="43"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell" id="j21-yA-QTb">
+                                        <rect key="frame" x="0.0" y="0.0" width="53.428600000000003" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="j0F-CI-zuP">
-                                            <rect key="frame" x="0.0" y="0.0" width="39" height="43"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="j0F-CI-zuP" customClass="CollectionViewCell" customModule="Calendar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="53.428600000000003" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="39" height="43"/>
+                                        <size key="customSize" width="53.428600000000003" height="60"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
