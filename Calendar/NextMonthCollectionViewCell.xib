@@ -9,43 +9,43 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="Calendar" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell2" id="Vsg-5C-7Xx" customClass="NextMonthCollectionViewCell" customModule="Calendar" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="53.5" height="67"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="53.5" height="67"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJm-ak-MHp">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPG-6X-aAc">
                         <rect key="frame" x="11" y="19" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gL0-VV-dYa">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeR-99-vXN">
                         <rect key="frame" x="6" y="23.5" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hu-uG-5rF">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0B-re-YJ9">
                         <rect key="frame" x="0.0" y="0.0" width="53.5" height="67"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="gL0-VV-dYa" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Qx1-Fb-rYB"/>
-                <constraint firstItem="gL0-VV-dYa" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="p6i-RU-E0J"/>
+                <constraint firstItem="XeR-99-vXN" firstAttribute="centerX" secondItem="Vsg-5C-7Xx" secondAttribute="centerX" id="2ky-Vt-w85"/>
+                <constraint firstItem="XeR-99-vXN" firstAttribute="centerY" secondItem="Vsg-5C-7Xx" secondAttribute="centerY" id="vee-Ix-FT0"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <viewLayoutGuide key="safeArea" id="it5-M5-TED"/>
             <size key="customSize" width="76" height="67"/>
             <connections>
-                <outlet property="Label" destination="gL0-VV-dYa" id="gxY-uF-GiU"/>
-                <outlet property="Label2" destination="nJm-ak-MHp" id="rsD-q8-bqs"/>
-                <outlet property="button" destination="5hu-uG-5rF" id="HwS-yL-xIs"/>
+                <outlet property="Label" destination="XeR-99-vXN" id="cPE-CX-DAk"/>
+                <outlet property="Label2" destination="hPG-6X-aAc" id="EgI-Bf-zqi"/>
+                <outlet property="button" destination="D0B-re-YJ9" id="k06-it-goX"/>
             </connections>
             <point key="canvasLocation" x="-84.057971014492765" y="64.620535714285708"/>
         </collectionViewCell>

@@ -12,42 +12,39 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var nowMonthName: UILabel!
     @IBOutlet weak var nextMonthName: UILabel!
-    
-    var selectedRow : Int?
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var nextMonthCollectionView: UICollectionView!
     var monthData = Array(1...CalenderBrain.init().curruntMothLength())
-    let searchController = UISearchController(searchResultsController: nil)
+    var nextMonthData = Array(1...CalenderBrain.init().nextMonthLength())
+    var selectedRow : Int?
     var items = [UIBarButtonItem]()
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView.backgroundColor = .green
         self.title = String(CalenderBrain.init().curruntYear)
-        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         nowMonthName.text = String(CalenderBrain.init().curruntMonthName())
         nextMonthName.text = String(CalenderBrain.init().nextMonthName())
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier : "MyCell")
-        self.navigationItem.searchController = searchController
-        
+        self.nextMonthCollectionView.register(UINib(nibName: "NextMonthCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyCell2")
+        //이해가 잘 안가는 부분!!!
         if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
-            layout.minimumInteritemSpacing = 0
+            layout.minimumInteritemSpacing = -0.2
         }
     }
-    
-    
 }
 
 extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return monthData.count
+        if collectionView == collectionView {
+            return monthData.count
+        }
+            return nextMonthData.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { if collectionView == collectionView{
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! CollectionViewCell
         
         if indexPath.row <= -1 {
@@ -70,10 +67,33 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate,
             
         }
         return cell
+        }
+        let cell = nextMonthCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCell2", for: indexPath) as! NextMonthCollectionViewCell
+        
+        if indexPath.row <= -1 {
+            cell.isHidden = true
+        } else{
+            cell.button.tag = indexPath.item
+            cell.button.addTarget(self, action:#selector(buttonPressed(_:)) , for: .touchUpInside)
+            cell.Label.text = String(Array(nextMonthData)[indexPath.row])
+            
+            if selectedRow == indexPath.item{
+                cell.Label.textColor = .white
+                cell.Label2.backgroundColor = .red
+                cell.Label2.layer.cornerRadius = 0.5 * cell.Label2.bounds.size.width
+                cell.Label2.clipsToBounds = true
+            }else{
+                cell.Label.textColor = .black
+                cell.Label2.backgroundColor = .white
+                cell.Label2.layer.cornerRadius =  0
+            }
+            
+        }
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 50  , height: 67)
+        return .init(width: 53.25  , height: 67)
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -84,5 +104,6 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate,
         }
         self.collectionView.reloadData()
     }
+
 }
 

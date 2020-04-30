@@ -30,6 +30,9 @@ struct CalenderBrain {
         return monthLenght[curruntMonth-1]
     }
     
+    func nextMonthLength() -> Int {
+        return monthLenght[curruntMonth]
+    }
     
     //    하나의 함수를 만들어서 거기 안에서 0앞에 있는 것들도 만들어주고 그걸 또 array에 넣어서 반화해주는 걸로 만들자.
     func optimaize(month : Int) -> Array<Int?> {
