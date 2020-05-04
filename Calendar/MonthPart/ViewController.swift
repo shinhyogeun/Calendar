@@ -15,20 +15,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nextMonthCollectionView: UICollectionView!
-    
-    var monthData = Array(1...CalenderBrain.init().curruntMothLength())
-    var nextMonthData = Array(1...CalenderBrain.init().nextMonthLength())
-    
+    var thing = realOptimaize()
     var selectedRow : Int?
     var items = [UIBarButtonItem]()
-    
     var forCollectionViewCount : Int?
     
+    var monthData : Array<Int>?
+    var nextMonthData : Array<Int>?
+    
     override func viewDidLoad() {
+         monthData = thing.optimaize(month: 5)
+         nextMonthData = thing.optimaize(month: 6)
+        
         self.title = String(CalenderBrain.init().curruntYear)
         nowMonthName.text = String(CalenderBrain.init().curruntMonthName())
         nextMonthName.text = String(CalenderBrain.init().nextMonthName())
-        
+    
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.nextMonthCollectionView.dataSource = self
@@ -54,10 +56,10 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.nextMonthCollectionView {
-            forCollectionViewCount = nextMonthData.count
+            forCollectionViewCount = nextMonthData!.count
             return forCollectionViewCount!
         } else {
-            forCollectionViewCount = monthData.count
+            forCollectionViewCount = monthData!.count
             return forCollectionViewCount!
         }
     }
@@ -65,13 +67,12 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { if collectionView == self.nextMonthCollectionView{
         let forCollectionViewCell = nextMonthCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCell2", for: indexPath) as! NextMonthCollectionViewCell
-        
-        if indexPath.row <= -1 {
+        forCollectionViewCell.button.tag = indexPath.item
+        if nextMonthData![indexPath.row] == 0 {
             forCollectionViewCell.isHidden = true
-        } else{
-            forCollectionViewCell.button.tag = indexPath.item
+        } else {
             forCollectionViewCell.button.addTarget(self, action:#selector(buttonPressed(_:)) , for: .touchUpInside)
-            forCollectionViewCell.Label.text = String(Array(nextMonthData)[indexPath.row])
+            forCollectionViewCell.Label.text = String(nextMonthData![indexPath.row])
             
             if selectedRow == indexPath.item{
                 forCollectionViewCell.Label.textColor = .white
@@ -88,15 +89,14 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate,
     } else {
         
         let forCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! CollectionViewCell
-        
-        if indexPath.row <= -1 {
+        forCollectionViewCell.button.tag = indexPath.item + 100
+        if monthData![indexPath.row] == 0 {
             forCollectionViewCell.isHidden = true
-        } else{
-            forCollectionViewCell.button.tag = indexPath.item + 100
-            forCollectionViewCell.button.addTarget(self, action:#selector(buttonPressed(_:)) , for: .touchUpInside)
-            forCollectionViewCell.Label.text = String(Array(monthData)[indexPath.row])
             
-            if selectedRow == indexPath.item + 100{
+        } else{
+            forCollectionViewCell.button.addTarget(self, action:#selector(buttonPressed(_:)) , for: .touchUpInside)
+            forCollectionViewCell.Label.text = String(monthData![indexPath.row])
+            if selectedRow == indexPath.item + 100 {
                 forCollectionViewCell.Label.textColor = .white
                 forCollectionViewCell.Label2.backgroundColor = .red
                 forCollectionViewCell.Label2.layer.cornerRadius = 0.5 * forCollectionViewCell.Label2.bounds.size.width
@@ -121,14 +121,21 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate,
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        if selectedRow == sender.tag{
-            selectedRow = nil
-        }else{
-            selectedRow = sender.tag
-        }
+        if sender.tag >= 100{
+            if selectedRow == sender.tag {
+                selectedRow = nil
+            }else{
+                selectedRow = sender.tag
+            }
             self.collectionView.reloadData()
+        } else{
+            if selectedRow == sender.tag {
+                selectedRow = nil
+            }else{
+                selectedRow = sender.tag
+            }
             self.nextMonthCollectionView.reloadData()
-        print(sender.tag)
+        }
     }
 }
 

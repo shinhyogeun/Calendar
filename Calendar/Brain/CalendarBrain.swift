@@ -14,6 +14,7 @@ struct CalenderBrain {
     var curruntYear = Calendar.current.component(.year, from: Date())
     var curruntMonth = Calendar.current.component(.month, from: Date())
     var cuuruntDay = Calendar.current.component(.day, from: Date())
+    var howManyNilIHaveToPut : Int?
     
     func curruntMonthName() -> String {
        return Calendar.current.monthSymbols[curruntMonth - 1]
@@ -34,15 +35,19 @@ struct CalenderBrain {
         return monthLenght[curruntMonth]
     }
     
-    //    하나의 함수를 만들어서 거기 안에서 0앞에 있는 것들도 만들어주고 그걸 또 array에 넣어서 반화해주는 걸로 만들자.
-    func optimaize(month : Int) -> Array<Int?> {
+}
+
+//    하나의 함수를 만들어서 거기 안에서 0앞에 있는 것들도 만들어주고 그걸 또 array에 넣어서 반화해주는 걸로 만들자.
+struct  realOptimaize {
+    
+     func optimaize(month : Int) -> Array<Int> {
         let calendar = Calendar.current
         let dateComponents = DateComponents(calendar: calendar,year:2020, month: month, day: 1)
         let composedData = calendar.date(from: dateComponents)
-        let howManyNilIHavetoPut = calendar.component(Calendar.Component.weekday, from: composedData!) - 1
-        var realData : Array<Int?> = []
+        let howManyNilIHaveToPut = calendar.component(Calendar.Component.weekday, from: composedData!) - 1
+        var realData : Array<Int> = []
         
-        for _ in 1...howManyNilIHavetoPut {
+        for _ in 0 ..< howManyNilIHaveToPut {
             realData.append(0)
         }
         
@@ -56,5 +61,4 @@ struct CalenderBrain {
         }
         return realData
     }
-    
 }
