@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gL0-VV-dYa">
@@ -30,10 +30,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hu-uG-5rF">
-                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="67"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </button>
                 </subviews>
             </view>
             <constraints>
@@ -45,7 +41,6 @@
             <connections>
                 <outlet property="Label" destination="gL0-VV-dYa" id="gxY-uF-GiU"/>
                 <outlet property="Label2" destination="nJm-ak-MHp" id="rsD-q8-bqs"/>
-                <outlet property="button" destination="5hu-uG-5rF" id="HwS-yL-xIs"/>
             </connections>
             <point key="canvasLocation" x="-84.057971014492765" y="64.620535714285708"/>
         </collectionViewCell>

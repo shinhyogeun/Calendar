@@ -16,10 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nextMonthCollectionView: UICollectionView!
     var thing = realOptimaize()
-    var selectedRow : Int?
+    var selectedIndex : IndexPath?
     var items = [UIBarButtonItem]()
     var forCollectionViewCount : Int?
-    
     var monthData : Array<Int>?
     var nextMonthData : Array<Int>?
     
@@ -67,45 +66,21 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { if collectionView == self.nextMonthCollectionView{
         let forCollectionViewCell = nextMonthCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCell2", for: indexPath) as! NextMonthCollectionViewCell
-        forCollectionViewCell.button.tag = indexPath.item
+//        forCollectionViewCell.button.tag = indexPath.item
         if nextMonthData![indexPath.row] == 0 {
             forCollectionViewCell.isHidden = true
         } else {
-            forCollectionViewCell.button.addTarget(self, action:#selector(buttonPressed(_:)) , for: .touchUpInside)
             forCollectionViewCell.Label.text = String(nextMonthData![indexPath.row])
-            
-            if selectedRow == indexPath.item{
-                forCollectionViewCell.Label.textColor = .white
-                forCollectionViewCell.Label2.backgroundColor = .red
-                forCollectionViewCell.Label2.layer.cornerRadius = 0.5 * forCollectionViewCell.Label2.bounds.size.width
-                forCollectionViewCell.Label2.clipsToBounds = true
-            }else{
-                forCollectionViewCell.Label.textColor = .black
-                forCollectionViewCell.Label2.backgroundColor = .white
-                forCollectionViewCell.Label2.layer.cornerRadius =  0
             }
-        }
-        return forCollectionViewCell
-    } else {
+            return forCollectionViewCell
+        } else {
         
         let forCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! CollectionViewCell
-        forCollectionViewCell.button.tag = indexPath.item + 100
+//        forCollectionViewCell.button.tag = indexPath.item + 100
         if monthData![indexPath.row] == 0 {
             forCollectionViewCell.isHidden = true
-            
-        } else{
-            forCollectionViewCell.button.addTarget(self, action:#selector(buttonPressed(_:)) , for: .touchUpInside)
+        } else {
             forCollectionViewCell.Label.text = String(monthData![indexPath.row])
-            if selectedRow == indexPath.item + 100 {
-                forCollectionViewCell.Label.textColor = .white
-                forCollectionViewCell.Label2.backgroundColor = .red
-                forCollectionViewCell.Label2.layer.cornerRadius = 0.5 * forCollectionViewCell.Label2.bounds.size.width
-                forCollectionViewCell.Label2.clipsToBounds = true
-            }else{
-                forCollectionViewCell.Label.textColor = .black
-                forCollectionViewCell.Label2.backgroundColor = .white
-                forCollectionViewCell.Label2.layer.cornerRadius =  0
-            }
         }
         return forCollectionViewCell
         
@@ -119,22 +94,24 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate,
             return .init(width: 53.25  , height: 67)
         }
     }
-    
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        if sender.tag >= 100{
-            if selectedRow == sender.tag {
-                selectedRow = nil
-            }else{
-                selectedRow = sender.tag
-            }
+
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.nextMonthCollectionView {
+            let forCollectionViewCell = collectionView.cellForItem(at: indexPath) as! NextMonthCollectionViewCell
             self.collectionView.reloadData()
-        } else{
-            if selectedRow == sender.tag {
-                selectedRow = nil
-            }else{
-                selectedRow = sender.tag
-            }
+            collectionView.reloadData()
+            forCollectionViewCell.Label.textColor = .white
+            forCollectionViewCell.Label2.backgroundColor = .red
+            forCollectionViewCell.Label2.layer.cornerRadius = 0.5 * forCollectionViewCell.Label2.bounds.size.width
+            forCollectionViewCell.Label2.clipsToBounds = true
+        }else{
+            let forCollectionViewCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
             self.nextMonthCollectionView.reloadData()
+            collectionView.reloadData()
+            forCollectionViewCell.Label.textColor = .white
+            forCollectionViewCell.Label2.backgroundColor = .red
+            forCollectionViewCell.Label2.layer.cornerRadius = 0.5 * forCollectionViewCell.Label2.bounds.size.width
+            forCollectionViewCell.Label2.clipsToBounds = true
         }
     }
 }
