@@ -51,4 +51,11 @@ extension YearViewController : UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: 126.3, height:(570-3)/4)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "lastOne") as? ViewController
+        vc?.whatIGetFromYearViewController = indexPath.row + 1
+        self.navigationController?.pushViewController(vc!, animated: true)
+        print("i'm pressed")
+    }
 }

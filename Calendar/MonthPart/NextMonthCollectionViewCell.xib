@@ -30,6 +30,10 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0B-re-YJ9">
+                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="67"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </button>
                 </subviews>
             </view>
             <constraints>
@@ -41,6 +45,7 @@
             <connections>
                 <outlet property="Label" destination="XeR-99-vXN" id="cPE-CX-DAk"/>
                 <outlet property="Label2" destination="hPG-6X-aAc" id="EgI-Bf-zqi"/>
+                <outlet property="button" destination="D0B-re-YJ9" id="k06-it-goX"/>
             </connections>
             <point key="canvasLocation" x="-84.057971014492765" y="64.620535714285708"/>
         </collectionViewCell>

@@ -9,6 +9,7 @@
 import UIKit
 
  class CollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var button: UIButton!
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var Label2: UILabel!
     override func awakeFromNib() {

@@ -11,13 +11,13 @@
         <!--View Controller-->
         <scene sceneID="w4F-AC-TIM">
             <objects>
-                <viewController id="XLJ-PH-Sok" customClass="ViewController" customModule="Calendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lastOne" id="XLJ-PH-Sok" customClass="ViewController" customModule="Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wUb-B7-GWa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zmE-PR-i2t">
-                                <rect key="frame" x="20" y="203" width="374" height="374"/>
+                                <rect key="frame" x="20" y="187" width="374" height="469"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qjs-1Q-zoz">
@@ -46,14 +46,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JUNLY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9T-Tj-85Q">
-                                <rect key="frame" x="267" y="636" width="121" height="63"/>
+                                <rect key="frame" x="267" y="664" width="121" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="41"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tQx-qG-GpE">
-                                <rect key="frame" x="20" y="707" width="374" height="374"/>
+                                <rect key="frame" x="20" y="736" width="374" height="374"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vrF-sq-dGB">
@@ -154,14 +154,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACI-Rq-0bH">
-                                <rect key="frame" x="184" y="758" width="46" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="XLJ-PH-Sok" kind="show" id="Get-Xf-WXt"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkG-7d-bxp">
                                 <rect key="frame" x="20" y="105" width="86" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -189,9 +181,6 @@
                                         </collectionViewCellContentView>
                                         <gestureRecognizers/>
                                         <size key="customSize" width="126" height="163"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="uWJ-cC-xRo" appends="YES" id="FKF-Eg-z2r"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -203,10 +192,10 @@
                     <connections>
                         <outlet property="yearCollectionView" destination="LZi-GP-aiO" id="Ghn-12-l7w"/>
                         <outlet property="yearName" destination="lkG-7d-bxp" id="GC2-eb-JWU"/>
+                        <segue destination="XLJ-PH-Sok" kind="show" id="oY9-5V-2jF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SlT-ga-dha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="uWJ-cC-xRo"/>
             </objects>
             <point key="canvasLocation" x="2755.072463768116" y="513.61607142857144"/>
         </scene>

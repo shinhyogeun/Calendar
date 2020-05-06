@@ -11,9 +11,14 @@ import UIKit
 class NextMonthCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var Label2: UILabel!    
+    @IBOutlet weak var button: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.addBorder(edge: .top, color: .gray, thickness: 0.5)
+        if self.Label.text == "0"{
+            button.isHidden = true
+        } else {
+            self.layer.addBorder(edge: .top, color: .gray, thickness: 0.5)
+        }
     }
 
 }
