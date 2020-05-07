@@ -12,29 +12,30 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var nowMonthName: UILabel!
     @IBOutlet weak var nextMonthName: UILabel!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nextMonthCollectionView: UICollectionView!
+    
     var whatIGetFromYearViewController : Int?
+    var curruntMonthNameThatIHaveToPut : String?
+    var nextMonthNameThatIHaveToPut : String?
     var thing = realOptimaize()
     var selectedRow : Int?
     var items = [UIBarButtonItem]()
     var forCollectionViewCount : Int?
-    
     var monthData : Array<Int>?
     var nextMonthData : Array<Int>?
     
     override func viewDidLoad() {
         monthData = thing.optimaize(month: whatIGetFromYearViewController!)
-        if whatIGetFromYearViewController == 12{
-         nextMonthData = thing.optimaize(month: 1)
+        if whatIGetFromYearViewController == 12 {
+         nextMonthData = thing.nextYearOpt(month: 1)
         } else {
          nextMonthData = thing.optimaize(month: whatIGetFromYearViewController! + 1)
         }
         
         self.title = String(CalenderBrain.init().curruntYear)
-        nowMonthName.text = String(CalenderBrain.init().curruntMonthName())
-        nextMonthName.text = String(CalenderBrain.init().nextMonthName())
+        nowMonthName.text = curruntMonthNameThatIHaveToPut!
+        nextMonthName.text = nextMonthNameThatIHaveToPut!
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self

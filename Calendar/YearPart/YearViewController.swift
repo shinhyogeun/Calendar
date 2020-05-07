@@ -55,6 +55,12 @@ extension YearViewController : UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "lastOne") as? ViewController
         vc?.whatIGetFromYearViewController = indexPath.row + 1
+        vc?.curruntMonthNameThatIHaveToPut = Calendar.current.monthSymbols[indexPath.row]
+        if indexPath.row != 11 {
+         vc?.nextMonthNameThatIHaveToPut = Calendar.current.monthSymbols[indexPath.row + 1]
+        } else{
+         vc?.nextMonthNameThatIHaveToPut = Calendar.current.monthSymbols[0]
+        }
         self.navigationController?.pushViewController(vc!, animated: true)
         print("i'm pressed")
     }

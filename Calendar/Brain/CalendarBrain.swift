@@ -42,7 +42,7 @@ struct  realOptimaize {
     
      func optimaize(month : Int) -> Array<Int> {
         let calendar = Calendar.current
-        let dateComponents = DateComponents(calendar: calendar,year:2020, month: month, day: 1)
+        let dateComponents = DateComponents(calendar: calendar,year:Calendar.current.component(.year, from: Date()), month: month, day: 1)
         let composedData = calendar.date(from: dateComponents)
         let howManyNilIHaveToPut = calendar.component(Calendar.Component.weekday, from: composedData!) - 1
         var realData : Array<Int> = []
@@ -51,7 +51,7 @@ struct  realOptimaize {
             realData.append(0)
         }
         
-        let nextMonthDateComponents = DateComponents(calendar: calendar,year:2020, month: month + 1, day: 1)
+        let nextMonthDateComponents = DateComponents(calendar: calendar,year:Calendar.current.component(.year, from: Date()), month: month + 1, day: 1)
         let nextMonthComposedData = calendar.date(from: nextMonthDateComponents)
         let thisMonthLastDay = Date(timeInterval: -1, since: nextMonthComposedData!)
         let howLongMonthThatYouChoose =  calendar.component(Calendar.Component.day, from: thisMonthLastDay)
@@ -60,5 +60,26 @@ struct  realOptimaize {
             realData.append(i)
         }
         return realData
+    }
+    
+    func nextYearOpt(month : Int) -> Array<Int> {
+        let calendar = Calendar.current
+        let dateComponents = DateComponents(calendar: calendar, year: Calendar.current.component(.year, from: Date())+1 , month: month, day: 1)
+        let composedData = calendar.date(from: dateComponents)
+        let howManyNilIHaveToPut = calendar.component(Calendar.Component.weekday, from: composedData!) - 1
+        var realData : Array<Int> = []
+        
+        for _ in 0 ..< howManyNilIHaveToPut{
+            realData.append(0)
+        }
+        
+        let nextMonthDateComponents = DateComponents(calendar: calendar,year:Calendar.current.component(.year, from: Date())+1, month: month + 1, day: 1)
+        let nextMonthComposedData = calendar.date(from: nextMonthDateComponents)
+        let thisMonthLastDay = Date(timeInterval: -1, since: nextMonthComposedData!)
+        let howLongMonthThatYouChoose =  calendar.component(Calendar.Component.day, from: thisMonthLastDay)
+        for i in 1...howLongMonthThatYouChoose{
+                   realData.append(i)
+               }
+               return realData
     }
 }

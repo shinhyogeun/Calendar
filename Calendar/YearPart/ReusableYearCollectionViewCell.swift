@@ -18,6 +18,7 @@ class ReusableYearCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.monthInYearCollectionView.isUserInteractionEnabled = false
         monthInYearCollectionView.delegate = self
         monthInYearCollectionView.dataSource = self
         monthInYearCollectionView.register(UINib(nibName: "InnerInCell", bundle: nil), forCellWithReuseIdentifier: "MyCell4")
